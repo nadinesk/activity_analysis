@@ -10,15 +10,15 @@ The final tidy dataset includes averages of measurements on the mean and standar
 I used two packages in this Script: the dplyr and tidyr packages.  
  
 I used the following files within the source above to create this dataset:  
-'features_info.txt': Shows information about the variables used on the feature vector. 
-'features.txt': List of all features. 
-'activity_labels.txt': Links the class labels with their activity name. 
-'train/X_train.txt': Training set. 
-'train/y_train.txt': Training labels. 
-'train/subject_test.txt': Training subjects. 
-'test/X_test.txt': Test set. 
-'test/y_test.txt': Test labels. 
-'test/subject_test.txt': Test subjects. 
+* 'features_info.txt': Shows information about the variables used on the feature vector. 
+* 'features.txt': List of all features. 
+* 'activity_labels.txt': Links the class labels with their activity name. 
+* 'train/X_train.txt': Training set. 
+* 'train/y_train.txt': Training labels. 
+* 'train/subject_test.txt': Training subjects. 
+* 'test/X_test.txt': Test set. 
+* 'test/y_test.txt': Test labels. 
+* 'test/subject_test.txt': Test subjects. 
  
 Test and Train data:  
 * Read in the X_test, y_test, and subject_test data. 
