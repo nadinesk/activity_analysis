@@ -30,20 +30,20 @@ The tidy dataset includes data from the following files from the source listed a
 
 The included dataset includes the following variables:  
 
-| Tables        | Are           										 | Cool  					|
-| ------------- |:-------------------------------------------------------| ------------------------:|
-| subject       | A unique ID for the subject/volunteer being studied    | NA    					|
-| activity_desc | One of six activities (Walking, Walking Upstairs,      | NA    					|
-| 				|  Walking Downstairs, Sitting, Standing, Laying) for 	 |       					| 
-|				|  which measurements were taken for each subject while  |       					|  
-|				|  wearing a smartphone on their waist.      			 |       					|
-| measurement   | Measurements on the mean and standard deviation for    | NA    					|
-|               |  each measurement within a 561-feature vector with time|       					| 
-|               |  and frequency domain variables.       				 |       					| 	
-| average       | The average of each of the included measurements,      | Normalized measurements, |
-|				|														 |	bounded within [-1,1]   |
-|               |  by subject and activity.    							 |       					| 
-|               |  							             				 |       					| 	
+| Tables        | Are           										     | Cool  					|
+| ------------- |:-----------------------------------------------------------| ------------------------:|
+| subject       | A unique ID for the subject/volunteer being studied        | NA    					|
+| activity_desc | One of six activities (Walking, Walking Upstairs,          | NA    					|
+| 				|  <br> Walking Downstairs, Sitting, Standing, Laying) for 	 |       					| 
+|				|  <br>which measurements were taken for each subject while  |       					|  
+|				|  <br>wearing a smartphone on their waist.      			 |       					|
+| measurement   | Measurements on the mean and standard deviation for    	 | NA    					|
+|               |  <br>each measurement within a 561-feature vector with time|       					| 
+|               |  <br>and frequency domain variables.       				 |       					| 	
+| average       | The average of each of the included measurements,          | Normalized measurements, |
+|				|	<br>by subject and activity.							 |	bounded within [-1,1]   |
+|               |                            							     |       					| 
+|               |  							             				     |       					| 	
 
  
  
