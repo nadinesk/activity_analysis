@@ -32,23 +32,29 @@ The included dataset includes the following variables:
 
 <table>
 	<tr>
-		<th>subject</th>
-		<th>activity_desc</th>
-		<th>measurement</th>
-		<th>average</th>
+		<th>Variable</th>
+		<th>Description</th>
+		<th>Unit</th>
 	</tr>
 	<tr>
+		<td>subject</td>
 		<td>An ID representing the subject/volunteer being studied</td>
-		<td>One of six activities (Walking, Walking Upstairs, Walking Downstairs, Sitting, Standing, Laying) for which measurements were taken for each subject while wearing a smartphone on their waist.</td>
-		<td>Measurements on the mean and standard deviation for each measurement within a 561-feature vector with time and frequency domain variables. </td>
-		<td>The average of each of the included measurements, by subject and activity. </td>
+		<td>NA</td>
 	</tr>
 	<tr>
+		<td>activity_desc</td>
+		<td>One of six activities (Walking, Walking Upstairs, Walking Downstairs, Sitting, Standing, Laying) for which measurements were taken for each subject while wearing a smartphone on their waist.</td>
 		<td>NA</td>
+	</tr>
+	<tr>
+		<td>measurement</td>
+		<td>Measurements on the mean and standard deviation for each measurement within a 561-feature vector with time and frequency domain variables.</td>
 		<td>NA</td>
-		<td>NA </td>
+	</tr>
+	<tr>
+		<td>average</td>
+		<td>The average of each of the included measurements, by subject and activity.</td>
 		<td>Normalized measurements, bounded within [-1,1]</td>
 	</tr>
-</table>
-
+ </table>
  
