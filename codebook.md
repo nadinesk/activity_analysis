@@ -30,6 +30,31 @@ The tidy dataset includes data from the following files from the source listed a
 
 The included dataset includes the following variables:  
 
+----------------------------------------------------------------------------
+ Centered         Default           			     Right 
+  Header          Aligned         			         Aligned  
+----------------- ---------------------------------- -----------------------
+  subject         A unique ID for                    NA
+  			      the subject/volunteer 
+  			      being studied                 
+
+  activity_desc   One of six activities              NA
+                  (Walking, Walking Upstairs,                  
+                   Walking Downstairs, Sitting,                
+                   Standing, Laying) 
+
+  measurement     Measurements on the mean and       NA
+    			  standard deviation for each 
+    			  measurement with a 561-feature 
+    			  vector with time and frequency
+    			  domain variable.         
+
+  average         The average of each of the         Normalized measurements, 
+  			      included measurements, by subject  bounded within [-1,1]         
+  			      and actvity  			      
+
+-------------------------------------------------------------------------------
+
 | Tables        | Are           										     | Cool  					|
 | ------------- |:-----------------------------------------------------------| ------------------------:|
 | subject       | A unique ID for the subject/volunteer being studied        | NA    					|
