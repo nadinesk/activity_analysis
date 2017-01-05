@@ -30,45 +30,25 @@ The tidy dataset includes data from the following files from the source listed a
 
 The included dataset includes the following variables:  
 
-----------------------------------------------------------------------------
- Centered         Default           			     Right 
-  Header          Aligned         			         Aligned  
------------------ ---------------------------------- -----------------------
-  subject         A unique ID for                    NA
-  			      the subject/volunteer 
-  			      being studied                 
+<table>
+	<tr>
+		<th>subject</th>
+		<th>activity_desc</th>
+		<th>measurement</th>
+		<th>average</th>
+	</tr>
+	<tr>
+		<td>An ID representing the subject/volunteer being studied</td>
+		<td>One of six activities (Walking, Walking Upstairs, Walking Downstairs, Sitting, Standing, Laying) for which measurements were taken for each subject while wearing a smartphone on their waist.</td>
+		<td>Measurements on the mean and standard deviation for each measurement within a 561-feature vector with time and frequency domain variables. </td>
+		<td>The average of each of the included measurements, by subject and activity. </td>
+	</tr>
+	<tr>
+		<td>NA</td>
+		<td>NA</td>
+		<td>NA </td>
+		<td>Normalized measurements, bounded within [-1,1]</td>
+	</tr>
+</table>
 
-  activity_desc   One of six activities              NA
-                  (Walking, Walking Upstairs,                  
-                   Walking Downstairs, Sitting,                
-                   Standing, Laying) 
-
-  measurement     Measurements on the mean and       NA
-    			  standard deviation for each 
-    			  measurement with a 561-feature 
-    			  vector with time and frequency
-    			  domain variable.         
-
-  average         The average of each of the         Normalized measurements, 
-  			      included measurements, by subject  bounded within [-1,1]         
-  			      and actvity  			      
-
--------------------------------------------------------------------------------
-
-| Tables        | Are           										     | Cool  					|
-| ------------- |:-----------------------------------------------------------| ------------------------:|
-| subject       | A unique ID for the subject/volunteer being studied        | NA    					|
-| activity_desc | One of six activities (Walking, Walking Upstairs,          | NA    					|
-| 				|  <br> Walking Downstairs, Sitting, Standing, Laying) for 	 |       					| 
-|				|  <br>which measurements were taken for each subject while  |       					|  
-|				|  <br>wearing a smartphone on their waist.      			 |       					|
-| measurement   | Measurements on the mean and standard deviation for    	 | NA    					|
-|               |  <br>each measurement within a 561-feature vector with time|       					| 
-|               |  <br>and frequency domain variables.       				 |       					| 	
-| average       | The average of each of the included measurements,          | Normalized measurements, |
-|				|	<br>by subject and activity.							 |	bounded within [-1,1]   |
-|               |                            							     |       					| 
-|               |  							             				     |       					| 	
-
- 
  
