@@ -29,14 +29,17 @@ Test and Train data:
 * Rename the measurement values variable to “values” and the measurement code variable to “measurement_code.” Only include numerical values in the measurement_code variable. The resulting dataframe is the master test data frame. 
 * Perform the five steps above for the ‘train’ files, to get one master train data frame. 
 * Merge the master test and master train data frames. 
+
 Features data:  
 * Read in the features.txt file.  
 * Identify the features that contain mean calculations, creating a column showing TRUE for those that contain the mean, and FALSE for those that don’t. 
 * Repeat the step above (step 2) for standard deviation.  
+
 Merge Test and Train Data with Features Information:  
 * Merge the test and train data frame with the features data frame on measurement code.  
 * Filter the resulting dataset for those with only mean and standard deviation measurements (TRUE for the mean variable and TRUE for the std variables created in an above step).  
 * Replace Activity codes with activity names, from the activity_labels.txt file 
+
 Summarize Data (Measurement Averages by Subject and Activity):  
 * Group the filtered data frame by subject and activity description, and measurement name 
 * Calculate the mean on the grouped data.  
