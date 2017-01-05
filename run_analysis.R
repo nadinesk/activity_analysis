@@ -1,7 +1,7 @@
 library(dplyr)
 library(tidyr)
 
-setwd("/Users/nadinekhattak/Desktop/data_project")
+setwd("data_project")
 
 if(!file.exists("./data_source")) {dir.create("./data_source")}
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
