@@ -1,3 +1,5 @@
+#Overview
+
 This script uses data from this source: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
  
 A description of the data is located here:  
@@ -20,6 +22,8 @@ I used the following files within the source above to create this dataset:
 * 'test/y_test.txt': Test labels. 
 * 'test/subject_test.txt': Test subjects. 
  
+#Script Steps
+
 Test and Train data:  
 * Read in the X_test, y_test, and subject_test data. 
 * Rename the y_test variable to “activity.” 
