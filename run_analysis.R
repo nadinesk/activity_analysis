@@ -1,14 +1,10 @@
 library(dplyr)
 library(tidyr)
 
-setwd("/Users/nadinekhattak/Desktop/data get and clean")
-
 if(!file.exists("./data_project")) {dir.create("./data_project")}
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl, destfile="./data_project/projectfile.zip", method="curl")
 restData <- read.csv("./data/restaurants.csv")
-
-setwd("/Users/nadinekhattak/Desktop/data get and clean/data_project/UCI HAR Dataset")
 
 ###TEST##########################
 #read test files###
@@ -113,6 +109,6 @@ rename(tidy_act_subj.mean, activity = activity_desc)
                         
 tidy_act_subj.mean
 
-write.table(x=tidy_act_subj.mean, file = "/Users/nadinekhattak/Desktop/data get and clean/data_project/tidy_act_subj_mean.txt", row.names=FALSE)
+write.table(x=tidy_act_subj.mean, file = "tidy_act_subj_mean.txt", row.names=FALSE)
 
 
