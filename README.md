@@ -47,7 +47,8 @@ Merge Test and Train Data with Features Information:
 Summarize Data (Measurement Averages by Subject and Activity):  
 * Group the filtered data frame by subject and activity description, and measurement name 
 * Calculate the mean on the grouped data.  
-* Tidy the data set using the tbl_df function.  
+* Tidy the data set using the tbl_df function.
+* Reshape the data to wide format, since feedback in first submittal indicated that I lost points for submitting in long format.
 * Write the resulting data frame to a file.  
  
  
