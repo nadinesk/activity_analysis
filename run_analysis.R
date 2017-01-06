@@ -1,24 +1,25 @@
 library(dplyr)
 library(tidyr)
+library(reshape)
 
-setwd("data_project")
+setwd("UCI HAR Dataset")
 
 if(!file.exists("./data_source")) {dir.create("./data_source")}
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl, destfile="./data_source/projectfile.zip", method="curl")
 
-
-
 ###TEST##########################
 #read test files###
-x_test <- read.table("data_source/UCI HAR Dataset/test/X_test.txt")
-y_test <- read.table("data_source/UCI HAR Dataset/test/y_test.txt")
-subject_test <- read.table("data_source/UCI HAR Dataset/test/subject_test.txt")
+x_test <- read.table("test/X_test.txt")
+y_test <- read.table("test/y_test.txt")
+subject_test <- read.table("test/subject_test.txt")
 
 #rename activity variable to "activity"
-y_test <- rename(y_test, activity = V1)
+y_test <- dplyr::rename(y_test, activity = V1)
+
 #rename subject variable to "subject"
-subject_test <- rename(subject_test, subject=V1)
+subject_test <- dplyr::rename(subject_test, subject=V1)
+
 #combine values with their activity and subject
 master_test <- cbind(subject_test, y_test, x_test)
 
@@ -38,14 +39,16 @@ table(gather_test$measurement_code)
 
 ###TRAIN##########################
 ##read train files
-x_train <- read.table("data_source/UCI HAR Dataset/train/X_train.txt")
-y_train <- read.table("data_source/UCI HAR Dataset/train/y_train.txt")
-subject_train <- read.table("data_source/UCI HAR Dataset/train/subject_train.txt")
+x_train <- read.table("train/X_train.txt")
+y_train <- read.table("train/y_train.txt")
+subject_train <- read.table("train/subject_train.txt")
 
 #rename activity variable to "activity"
-y_train <- rename(y_train, activity = V1)
+y_train <- dplyr::rename(y_train, activity = V1)
+
 #rename subject variable to "subject"
-subject_train <- rename(subject_train, subject=V1)
+subject_train <- dplyr::rename(subject_train, subject = V1)
+
 #combine values with their activity and subject
 master_train <- cbind(subject_train, y_train, x_train)
 
@@ -68,14 +71,12 @@ master.train_test <- rbind(gather_train, gather_test)
 
 ###FEATURES FILE###
 
-features <- read.table("data_source/UCI HAR Dataset/features.txt")
+features <- read.table("features.txt")
 str(features)
 
-##identify columns with mean() calculation
-features$mean <- grepl("mean()\\>", features$V2)
+##identify columns with mean and std calculations
+features$mean <- grepl("mean|std", features$V2, ignore.case = TRUE)
 
-##identify columns with std() calculation
-features$std <- grepl("std()\\>", features$V2)
 
 ##double check ###
 feature_code <- select(test_train_feature.subset, unique(measurement_code))
@@ -87,13 +88,11 @@ str(unique.feature_code)
 test_train_feature <- merge(master.train_test, features, by.x="measurement_code", by.y="V1")
 
 test_train_feature <- test_train_feature %>% 
-  rename(measurement_name = V2) 
-
-str(test_train_feature)
+  dplyr::rename(measurement_name = V2) 
 
 
 #keep only measurements with mean or std calculations
-test_train_feature.subset <- filter(test_train_feature, mean == TRUE | std == TRUE)
+test_train_feature.subset <- filter(test_train_feature, mean == TRUE)
 
 test_train_feature.subset$activity_desc <- test_train_feature.subset$activity
 
@@ -109,13 +108,13 @@ test_train_feature.subset$activity_desc <- gsub('6','LAYING',test_train_feature.
 act_subj.mean <- test_train_feature.subset %>% 
   group_by(subject, activity_desc, measurement_name ) %>%
   summarize(mean(value)) %>%
-  rename(average = `mean(value)`)
+  dplyr::rename(average = `mean(value)`)
 
-tidy_act_subj.mean <- tbl_df(act_subj.mean)
-rename(tidy_act_subj.mean, activity = activity_desc)
-                        
-str(tidy_act_subj.mean)
+act_subj.meanstd_w <- spread(act_subj.mean, measurement_name, average)
 
-write.table(x=tidy_act_subj.mean, file = "tidy_act_subj_mean.txt", row.names=FALSE)
+act_subj.meanstd_w <- tbl_df(act_subj.meanstd_w)
 
+str(act_subj.meanstd_w)
+
+write.table(x=act_subj.meanstd_w, file = "tidy_act_subj_mean.txt", row.names=FALSE)
 
