@@ -110,6 +110,7 @@ act_subj.mean <- test_train_feature.subset %>%
   summarize(mean(value)) %>%
   dplyr::rename(average = `mean(value)`)
 
+#Change dataset to wide format (previous feedback indicated that points were taken away when I previously submitted in long format)
 act_subj.meanstd_w <- spread(act_subj.mean, measurement_name, average)
 
 act_subj.meanstd_w <- tbl_df(act_subj.meanstd_w)
