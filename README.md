@@ -3,7 +3,7 @@
 This script uses data from this source: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
  
 A description of the data is located here:  
-http://archive.ics.uci.edu/ml/index.html 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
  
 A description of the resulting dataset can also be found in this repository’s Codebook.md 
  
